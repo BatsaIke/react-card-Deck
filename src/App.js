@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { createDeck } from "./utils/Decks.js";
-import './App.css'
+import "./App.css";
 import { shuffleDeck } from "./utils/Decks.js";
 import { sortCards } from "./utils/Decks.js";
 import { Card } from "./component/Card.js";
 
-
-
-
 function App() {
   const [deck, setDeck] = useState(() => createDeck());
+  const [dCards, setDcard] = useState({});
+ 
 
   function shuffle() {
     const newDeck = [...deck];
@@ -21,10 +20,9 @@ function App() {
     const drawnCards = deck.slice(0, numCards);
     const newDeck = deck.slice(numCards);
     setDeck(newDeck);
+    setDcard(drawnCards);
     return drawnCards;
   }
-
-  
 
   function drawAndSortCards(numCards) {
     const drawnCards = drawCards(numCards);
@@ -53,10 +51,16 @@ function App() {
           <Card key={index} suit={suit} rank={rank} />
         ))}
       </div>
-      <div><h3>Drawn and sorted results are in the console</h3></div>
+      {dCards.length > 0 && <h3>The drawn cards are </h3>}
+      <div className='d-container'>
+        {dCards.length > 0
+          ? dCards.map(({ suit, rank }, index) => (
+              <Card key={index} suit={suit} rank={rank} />
+            ))
+          : ""}
+      </div>
     </div>
   );
 }
 
 export default App;
-
