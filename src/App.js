@@ -38,7 +38,7 @@ function App() {
       </button>
       <div>
         <button
-          onClick={() => console.log(drawCards(2))}
+          onClick={() => console.log(drawCards(5))}
           className='shuffle-button'>
           Draw 5 Cards
         </button>
@@ -53,6 +53,7 @@ function App() {
           <Card key={index} suit={suit} rank={rank} />
         ))}
       </div>
+      <div><h3>Drawn and sorted results are in the console</h3></div>
     </div>
   );
 }
