@@ -1,5 +1,5 @@
-const SUITS = ["hearts", "diamonds", "clubs", "spades"];
-const RANKS = [
+export const SUITS = ["hearts", "diamonds", "clubs", "spades"];
+export const RANKS = [
   "2",
   "3",
   "4",

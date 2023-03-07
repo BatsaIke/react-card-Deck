@@ -3,15 +3,10 @@ import { createDeck } from "./utils/Decks.js";
 import './App.css'
 import { shuffleDeck } from "./utils/Decks.js";
 import { sortCards } from "./utils/Decks.js";
+import { Card } from "./component/Card.js";
 
 
-function Card({ suit, rank }) {
-  return (
-    <div className='card'>
-      <div className={`card-${suit}`}>{rank}</div>
-    </div>
-  );
-}
+
 
 function App() {
   const [deck, setDeck] = useState(() => createDeck());
@@ -28,6 +23,8 @@ function App() {
     setDeck(newDeck);
     return drawnCards;
   }
+
+  
 
   function drawAndSortCards(numCards) {
     const drawnCards = drawCards(numCards);
