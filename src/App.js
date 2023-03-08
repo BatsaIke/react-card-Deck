@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { createDeck } from "./utils/Decks.js";
-import "./App.css";
+import './App.css'
 import { shuffleDeck } from "./utils/Decks.js";
 import { sortCards } from "./utils/Decks.js";
 import { Card } from "./component/Card.js";
 
+
+
+
 function App() {
   const [deck, setDeck] = useState(() => createDeck());
-  const [dCards, setDcard] = useState({});
- 
+  const [dCards, setDcard]=useState({})
+
 
   function shuffle() {
     const newDeck = [...deck];
@@ -23,6 +26,8 @@ function App() {
     setDcard(drawnCards);
     return drawnCards;
   }
+
+  
 
   function drawAndSortCards(numCards) {
     const drawnCards = drawCards(numCards);
@@ -46,7 +51,7 @@ function App() {
           Draw 5 Cards and Sort
         </button>
       </div>
-      <div className='card-container'>
+      <div className='deck'>
         {deck.map(({ suit, rank }, index) => (
           <Card key={index} suit={suit} rank={rank} />
         ))}
@@ -59,8 +64,11 @@ function App() {
             ))
           : ""}
       </div>
+
+      
     </div>
   );
 }
 
 export default App;
+

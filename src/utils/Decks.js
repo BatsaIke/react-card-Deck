@@ -1,5 +1,6 @@
 export const SUITS = ["hearts", "diamonds", "clubs", "spades"];
 export const RANKS = [
+  "Ace",
   "2",
   "3",
   "4",
@@ -9,10 +10,9 @@ export const RANKS = [
   "8",
   "9",
   "10",
-  "J",
-  "Q",
-  "K",
-  "A",
+  "Jack",
+  "Queen",
+  "King",
 ];
 
 export const createDeck = () => {
