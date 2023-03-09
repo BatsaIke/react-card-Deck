@@ -1,20 +1,8 @@
-export const SUITS = ["hearts", "diamonds", "clubs", "spades"];
-export const RANKS = [
-  "Ace",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "Jack",
-  "Queen",
-  "King",
-];
 
+import { SUITS } from "./cardsData.js";
+import { RANKS } from "./cardsData.js";
+
+//create deck of cards 
 export const createDeck = () => {
   const deck = [];
   for (let i = 0; i < SUITS.length; i++) {
@@ -27,7 +15,7 @@ export const createDeck = () => {
 };
 
 
-
+//shuffle decks
 export const shuffleDeck=(deck)=> {
   for (let i = deck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -35,6 +23,7 @@ export const shuffleDeck=(deck)=> {
   }
 }
 
+//sort cards
 export const  sortCards=(cards) =>{
   return cards.sort((cardA, cardB) => {
     const suitOrder = ["clubs", "spades", "hearts", "diamonds"];
